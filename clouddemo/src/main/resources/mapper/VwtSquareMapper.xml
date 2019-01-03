@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spingclouddemo.MybatisFile.dao.VwtSquareMapper">
+  <resultMap id="BaseResultMap" type="spingclouddemo.MybatisFile.example.VwtSquare">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="USEVERSION" jdbcType="VARCHAR" property="useversion" />
+    <result column="LOGO" jdbcType="VARCHAR" property="logo" />
+    <result column="TYPE" jdbcType="DECIMAL" property="type" />
+    <result column="FTPURL" jdbcType="VARCHAR" property="ftpurl" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="PUBLICIMAGE1" jdbcType="VARCHAR" property="publicimage1" />
+    <result column="PUBLICIMAGE2" jdbcType="VARCHAR" property="publicimage2" />
+    <result column="PUBLICIMAGE3" jdbcType="VARCHAR" property="publicimage3" />
+    <result column="PUBLICIMAGE4" jdbcType="VARCHAR" property="publicimage4" />
+    <result column="ISHIDE" jdbcType="DECIMAL" property="ishide" />
+    <result column="PRESET" jdbcType="DECIMAL" property="preset" />
+    <result column="SORT" jdbcType="DECIMAL" property="sort" />
+    <result column="CORPID" jdbcType="VARCHAR" property="corpid" />
+    <result column="SECURITYID" jdbcType="VARCHAR" property="securityid" />
+    <result column="SECURITYKEY" jdbcType="VARCHAR" property="securitykey" />
+    <result column="CALLBACKURL" jdbcType="VARCHAR" property="callbackurl" />
+    <result column="SERVICENOTYPE" jdbcType="VARCHAR" property="servicenotype" />
+    <result column="SIZES" jdbcType="DECIMAL" property="sizes" />
+    <result column="VERSION" jdbcType="VARCHAR" property="version" />
+    <result column="PACKAGENAME" jdbcType="VARCHAR" property="packagename" />
+    <result column="VERSIONCODE" jdbcType="VARCHAR" property="versioncode" />
+    <result column="ISOPENALL" jdbcType="DECIMAL" property="isopenall" />
+    <result column="ISSYSTEMAPP" jdbcType="DECIMAL" property="issystemapp" />
+    <result column="REGIONNAME" jdbcType="VARCHAR" property="regionname" />
+    <result column="ISFREELOGIN" jdbcType="DECIMAL" property="isfreelogin" />
+    <result column="TOKEN" jdbcType="VARCHAR" property="token" />
+    <result column="TOKENURL" jdbcType="VARCHAR" property="tokenurl" />
+    <result column="ISCANCELATTENTION" jdbcType="DECIMAL" property="iscancelattention" />
+    <result column="STARTPARAMETER" jdbcType="VARCHAR" property="startparameter" />
+    <result column="SERVICENOMENU" jdbcType="DECIMAL" property="servicenomenu" />
+    <result column="TELNUM" jdbcType="DECIMAL" property="telnum" />
+    <result column="USERID" jdbcType="DECIMAL" property="userid" />
+    <result column="CHANNELNUM" jdbcType="DECIMAL" property="channelnum" />
+    <result column="SHOWWORKBENCH" jdbcType="DECIMAL" property="showworkbench" />
+    <result column="FROMCHANNEL" jdbcType="DECIMAL" property="fromchannel" />
+    <result column="ISTESTNEEDED" jdbcType="DECIMAL" property="istestneeded" />
+    <result column="PUBREASON" jdbcType="VARCHAR" property="pubreason" />
+    <result column="APPLYTYPE" jdbcType="DECIMAL" property="applytype" />
+    <result column="ENCODING_AES_KEY" jdbcType="VARCHAR" property="encodingAesKey" />
+    <result column="SIZE1" jdbcType="DECIMAL" property="size1" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="PUBLISHTIME" jdbcType="TIMESTAMP" property="publishtime" />
+    <result column="PERSONALIZE" jdbcType="VARCHAR" property="personalize" />
+    <result column="SELCORPID" jdbcType="VARCHAR" property="selcorpid" />
+    <result column="PLATFORM_URL" jdbcType="VARCHAR" property="platformUrl" />
+    <result column="SECURITY_TEL_NUM" jdbcType="DECIMAL" property="securityTelNum" />
+    <result column="ISHIDEICON" jdbcType="DECIMAL" property="ishideicon" />
+    <result column="ISMARKETVISIBLE" jdbcType="DECIMAL" property="ismarketvisible" />
+    <result column="FORWARDURL" jdbcType="VARCHAR" property="forwardurl" />
+    <result column="VISIT_COUNT" jdbcType="DECIMAL" property="visitCount" />
+    <result column="TOPIC" jdbcType="VARCHAR" property="topic" />
+    <result column="EXTENSIONIMG" jdbcType="VARCHAR" property="extensionimg" />
+    <result column="ISEXTENSION" jdbcType="DECIMAL" property="isextension" />
+    <result column="ISTOPSHOW" jdbcType="DECIMAL" property="istopshow" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, NAME, USEVERSION, LOGO, TYPE, FTPURL, DESCRIPTION, CREATETIME, PUBLICIMAGE1, 
+    PUBLICIMAGE2, PUBLICIMAGE3, PUBLICIMAGE4, ISHIDE, PRESET, SORT, CORPID, SECURITYID, 
+    SECURITYKEY, CALLBACKURL, SERVICENOTYPE, SIZES, VERSION, PACKAGENAME, VERSIONCODE, 
+    ISOPENALL, ISSYSTEMAPP, REGIONNAME, ISFREELOGIN, TOKEN, TOKENURL, ISCANCELATTENTION, 
+    STARTPARAMETER, SERVICENOMENU, TELNUM, USERID, CHANNELNUM, SHOWWORKBENCH, FROMCHANNEL, 
+    ISTESTNEEDED, PUBREASON, APPLYTYPE, ENCODING_AES_KEY, SIZE1, STATUS, PUBLISHTIME, 
+    PERSONALIZE, SELCORPID, PLATFORM_URL, SECURITY_TEL_NUM, ISHIDEICON, ISMARKETVISIBLE, 
+    FORWARDURL, VISIT_COUNT, TOPIC, EXTENSIONIMG, ISEXTENSION, ISTOPSHOW
+  </sql>
+  <select id="selectByExample" parameterType="spingclouddemo.MybatisFile.example.VwtSquareExample" resultMap="BaseResultMap">
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from VWT_SQUARE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from VWT_SQUARE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from VWT_SQUARE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="spingclouddemo.MybatisFile.example.VwtSquareExample">
+    delete from VWT_SQUARE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="spingclouddemo.MybatisFile.example.VwtSquare">
+    insert into VWT_SQUARE (ID, NAME, USEVERSION, 
+      LOGO, TYPE, FTPURL, 
+      DESCRIPTION, CREATETIME, PUBLICIMAGE1, 
+      PUBLICIMAGE2, PUBLICIMAGE3, PUBLICIMAGE4, 
+      ISHIDE, PRESET, SORT, 
+      CORPID, SECURITYID, SECURITYKEY, 
+      CALLBACKURL, SERVICENOTYPE, SIZES, 
+      VERSION, PACKAGENAME, VERSIONCODE, 
+      ISOPENALL, ISSYSTEMAPP, REGIONNAME, 
+      ISFREELOGIN, TOKEN, TOKENURL, 
+      ISCANCELATTENTION, STARTPARAMETER, SERVICENOMENU, 
+      TELNUM, USERID, CHANNELNUM, 
+      SHOWWORKBENCH, FROMCHANNEL, ISTESTNEEDED, 
+      PUBREASON, APPLYTYPE, ENCODING_AES_KEY, 
+      SIZE1, STATUS, PUBLISHTIME, 
+      PERSONALIZE, SELCORPID, PLATFORM_URL, 
+      SECURITY_TEL_NUM, ISHIDEICON, ISMARKETVISIBLE, 
+      FORWARDURL, VISIT_COUNT, TOPIC, 
+      EXTENSIONIMG, ISEXTENSION, ISTOPSHOW
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{useversion,jdbcType=VARCHAR}, 
+      #{logo,jdbcType=VARCHAR}, #{type,jdbcType=DECIMAL}, #{ftpurl,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{publicimage1,jdbcType=VARCHAR}, 
+      #{publicimage2,jdbcType=VARCHAR}, #{publicimage3,jdbcType=VARCHAR}, #{publicimage4,jdbcType=VARCHAR}, 
+      #{ishide,jdbcType=DECIMAL}, #{preset,jdbcType=DECIMAL}, #{sort,jdbcType=DECIMAL}, 
+      #{corpid,jdbcType=VARCHAR}, #{securityid,jdbcType=VARCHAR}, #{securitykey,jdbcType=VARCHAR}, 
+      #{callbackurl,jdbcType=VARCHAR}, #{servicenotype,jdbcType=VARCHAR}, #{sizes,jdbcType=DECIMAL}, 
+      #{version,jdbcType=VARCHAR}, #{packagename,jdbcType=VARCHAR}, #{versioncode,jdbcType=VARCHAR}, 
+      #{isopenall,jdbcType=DECIMAL}, #{issystemapp,jdbcType=DECIMAL}, #{regionname,jdbcType=VARCHAR}, 
+      #{isfreelogin,jdbcType=DECIMAL}, #{token,jdbcType=VARCHAR}, #{tokenurl,jdbcType=VARCHAR}, 
+      #{iscancelattention,jdbcType=DECIMAL}, #{startparameter,jdbcType=VARCHAR}, #{servicenomenu,jdbcType=DECIMAL}, 
+      #{telnum,jdbcType=DECIMAL}, #{userid,jdbcType=DECIMAL}, #{channelnum,jdbcType=DECIMAL}, 
+      #{showworkbench,jdbcType=DECIMAL}, #{fromchannel,jdbcType=DECIMAL}, #{istestneeded,jdbcType=DECIMAL}, 
+      #{pubreason,jdbcType=VARCHAR}, #{applytype,jdbcType=DECIMAL}, #{encodingAesKey,jdbcType=VARCHAR}, 
+      #{size1,jdbcType=DECIMAL}, #{status,jdbcType=DECIMAL}, #{publishtime,jdbcType=TIMESTAMP}, 
+      #{personalize,jdbcType=VARCHAR}, #{selcorpid,jdbcType=VARCHAR}, #{platformUrl,jdbcType=VARCHAR}, 
+      #{securityTelNum,jdbcType=DECIMAL}, #{ishideicon,jdbcType=DECIMAL}, #{ismarketvisible,jdbcType=DECIMAL}, 
+      #{forwardurl,jdbcType=VARCHAR}, #{visitCount,jdbcType=DECIMAL}, #{topic,jdbcType=VARCHAR}, 
+      #{extensionimg,jdbcType=VARCHAR}, #{isextension,jdbcType=DECIMAL}, #{istopshow,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="spingclouddemo.MybatisFile.example.VwtSquare">
+    insert into VWT_SQUARE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="useversion != null">
+        USEVERSION,
+      </if>
+      <if test="logo != null">
+        LOGO,
+      </if>
+      <if test="type != null">
+        TYPE,
+      </if>
+      <if test="ftpurl != null">
+        FTPURL,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="createtime != null">
+        CREATETIME,
+      </if>
+      <if test="publicimage1 != null">
+        PUBLICIMAGE1,
+      </if>
+      <if test="publicimage2 != null">
+        PUBLICIMAGE2,
+      </if>
+      <if test="publicimage3 != null">
+        PUBLICIMAGE3,
+      </if>
+      <if test="publicimage4 != null">
+        PUBLICIMAGE4,
+      </if>
+      <if test="ishide != null">
+        ISHIDE,
+      </if>
+      <if test="preset != null">
+        PRESET,
+      </if>
+      <if test="sort != null">
+        SORT,
+      </if>
+      <if test="corpid != null">
+        CORPID,
+      </if>
+      <if test="securityid != null">
+        SECURITYID,
+      </if>
+      <if test="securitykey != null">
+        SECURITYKEY,
+      </if>
+      <if test="callbackurl != null">
+        CALLBACKURL,
+      </if>
+      <if test="servicenotype != null">
+        SERVICENOTYPE,
+      </if>
+      <if test="sizes != null">
+        SIZES,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+      <if test="packagename != null">
+        PACKAGENAME,
+      </if>
+      <if test="versioncode != null">
+        VERSIONCODE,
+      </if>
+      <if test="isopenall != null">
+        ISOPENALL,
+      </if>
+      <if test="issystemapp != null">
+        ISSYSTEMAPP,
+      </if>
+      <if test="regionname != null">
+        REGIONNAME,
+      </if>
+      <if test="isfreelogin != null">
+        ISFREELOGIN,
+      </if>
+      <if test="token != null">
+        TOKEN,
+      </if>
+      <if test="tokenurl != null">
+        TOKENURL,
+      </if>
+      <if test="iscancelattention != null">
+        ISCANCELATTENTION,
+      </if>
+      <if test="startparameter != null">
+        STARTPARAMETER,
+      </if>
+      <if test="servicenomenu != null">
+        SERVICENOMENU,
+      </if>
+      <if test="telnum != null">
+        TELNUM,
+      </if>
+      <if test="userid != null">
+        USERID,
+      </if>
+      <if test="channelnum != null">
+        CHANNELNUM,
+      </if>
+      <if test="showworkbench != null">
+        SHOWWORKBENCH,
+      </if>
+      <if test="fromchannel != null">
+        FROMCHANNEL,
+      </if>
+      <if test="istestneeded != null">
+        ISTESTNEEDED,
+      </if>
+      <if test="pubreason != null">
+        PUBREASON,
+      </if>
+      <if test="applytype != null">
+        APPLYTYPE,
+      </if>
+      <if test="encodingAesKey != null">
+        ENCODING_AES_KEY,
+      </if>
+      <if test="size1 != null">
+        SIZE1,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="publishtime != null">
+        PUBLISHTIME,
+      </if>
+      <if test="personalize != null">
+        PERSONALIZE,
+      </if>
+      <if test="selcorpid != null">
+        SELCORPID,
+      </if>
+      <if test="platformUrl != null">
+        PLATFORM_URL,
+      </if>
+      <if test="securityTelNum != null">
+        SECURITY_TEL_NUM,
+      </if>
+      <if test="ishideicon != null">
+        ISHIDEICON,
+      </if>
+      <if test="ismarketvisible != null">
+        ISMARKETVISIBLE,
+      </if>
+      <if test="forwardurl != null">
+        FORWARDURL,
+      </if>
+      <if test="visitCount != null">
+        VISIT_COUNT,
+      </if>
+      <if test="topic != null">
+        TOPIC,
+      </if>
+      <if test="extensionimg != null">
+        EXTENSIONIMG,
+      </if>
+      <if test="isextension != null">
+        ISEXTENSION,
+      </if>
+      <if test="istopshow != null">
+        ISTOPSHOW,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="useversion != null">
+        #{useversion,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="ftpurl != null">
+        #{ftpurl,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publicimage1 != null">
+        #{publicimage1,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage2 != null">
+        #{publicimage2,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage3 != null">
+        #{publicimage3,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage4 != null">
+        #{publicimage4,jdbcType=VARCHAR},
+      </if>
+      <if test="ishide != null">
+        #{ishide,jdbcType=DECIMAL},
+      </if>
+      <if test="preset != null">
+        #{preset,jdbcType=DECIMAL},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=DECIMAL},
+      </if>
+      <if test="corpid != null">
+        #{corpid,jdbcType=VARCHAR},
+      </if>
+      <if test="securityid != null">
+        #{securityid,jdbcType=VARCHAR},
+      </if>
+      <if test="securitykey != null">
+        #{securitykey,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackurl != null">
+        #{callbackurl,jdbcType=VARCHAR},
+      </if>
+      <if test="servicenotype != null">
+        #{servicenotype,jdbcType=VARCHAR},
+      </if>
+      <if test="sizes != null">
+        #{sizes,jdbcType=DECIMAL},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="packagename != null">
+        #{packagename,jdbcType=VARCHAR},
+      </if>
+      <if test="versioncode != null">
+        #{versioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="isopenall != null">
+        #{isopenall,jdbcType=DECIMAL},
+      </if>
+      <if test="issystemapp != null">
+        #{issystemapp,jdbcType=DECIMAL},
+      </if>
+      <if test="regionname != null">
+        #{regionname,jdbcType=VARCHAR},
+      </if>
+      <if test="isfreelogin != null">
+        #{isfreelogin,jdbcType=DECIMAL},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenurl != null">
+        #{tokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="iscancelattention != null">
+        #{iscancelattention,jdbcType=DECIMAL},
+      </if>
+      <if test="startparameter != null">
+        #{startparameter,jdbcType=VARCHAR},
+      </if>
+      <if test="servicenomenu != null">
+        #{servicenomenu,jdbcType=DECIMAL},
+      </if>
+      <if test="telnum != null">
+        #{telnum,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=DECIMAL},
+      </if>
+      <if test="channelnum != null">
+        #{channelnum,jdbcType=DECIMAL},
+      </if>
+      <if test="showworkbench != null">
+        #{showworkbench,jdbcType=DECIMAL},
+      </if>
+      <if test="fromchannel != null">
+        #{fromchannel,jdbcType=DECIMAL},
+      </if>
+      <if test="istestneeded != null">
+        #{istestneeded,jdbcType=DECIMAL},
+      </if>
+      <if test="pubreason != null">
+        #{pubreason,jdbcType=VARCHAR},
+      </if>
+      <if test="applytype != null">
+        #{applytype,jdbcType=DECIMAL},
+      </if>
+      <if test="encodingAesKey != null">
+        #{encodingAesKey,jdbcType=VARCHAR},
+      </if>
+      <if test="size1 != null">
+        #{size1,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="personalize != null">
+        #{personalize,jdbcType=VARCHAR},
+      </if>
+      <if test="selcorpid != null">
+        #{selcorpid,jdbcType=VARCHAR},
+      </if>
+      <if test="platformUrl != null">
+        #{platformUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="securityTelNum != null">
+        #{securityTelNum,jdbcType=DECIMAL},
+      </if>
+      <if test="ishideicon != null">
+        #{ishideicon,jdbcType=DECIMAL},
+      </if>
+      <if test="ismarketvisible != null">
+        #{ismarketvisible,jdbcType=DECIMAL},
+      </if>
+      <if test="forwardurl != null">
+        #{forwardurl,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        #{visitCount,jdbcType=DECIMAL},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="extensionimg != null">
+        #{extensionimg,jdbcType=VARCHAR},
+      </if>
+      <if test="isextension != null">
+        #{isextension,jdbcType=DECIMAL},
+      </if>
+      <if test="istopshow != null">
+        #{istopshow,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="spingclouddemo.MybatisFile.example.VwtSquareExample" resultType="java.lang.Long">
+    select count(*) from VWT_SQUARE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update VWT_SQUARE
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null">
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useversion != null">
+        USEVERSION = #{record.useversion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logo != null">
+        LOGO = #{record.logo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        TYPE = #{record.type,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ftpurl != null">
+        FTPURL = #{record.ftpurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null">
+        CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.publicimage1 != null">
+        PUBLICIMAGE1 = #{record.publicimage1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.publicimage2 != null">
+        PUBLICIMAGE2 = #{record.publicimage2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.publicimage3 != null">
+        PUBLICIMAGE3 = #{record.publicimage3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.publicimage4 != null">
+        PUBLICIMAGE4 = #{record.publicimage4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ishide != null">
+        ISHIDE = #{record.ishide,jdbcType=DECIMAL},
+      </if>
+      <if test="record.preset != null">
+        PRESET = #{record.preset,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sort != null">
+        SORT = #{record.sort,jdbcType=DECIMAL},
+      </if>
+      <if test="record.corpid != null">
+        CORPID = #{record.corpid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.securityid != null">
+        SECURITYID = #{record.securityid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.securitykey != null">
+        SECURITYKEY = #{record.securitykey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.callbackurl != null">
+        CALLBACKURL = #{record.callbackurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicenotype != null">
+        SERVICENOTYPE = #{record.servicenotype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sizes != null">
+        SIZES = #{record.sizes,jdbcType=DECIMAL},
+      </if>
+      <if test="record.version != null">
+        VERSION = #{record.version,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packagename != null">
+        PACKAGENAME = #{record.packagename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versioncode != null">
+        VERSIONCODE = #{record.versioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isopenall != null">
+        ISOPENALL = #{record.isopenall,jdbcType=DECIMAL},
+      </if>
+      <if test="record.issystemapp != null">
+        ISSYSTEMAPP = #{record.issystemapp,jdbcType=DECIMAL},
+      </if>
+      <if test="record.regionname != null">
+        REGIONNAME = #{record.regionname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isfreelogin != null">
+        ISFREELOGIN = #{record.isfreelogin,jdbcType=DECIMAL},
+      </if>
+      <if test="record.token != null">
+        TOKEN = #{record.token,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tokenurl != null">
+        TOKENURL = #{record.tokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iscancelattention != null">
+        ISCANCELATTENTION = #{record.iscancelattention,jdbcType=DECIMAL},
+      </if>
+      <if test="record.startparameter != null">
+        STARTPARAMETER = #{record.startparameter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicenomenu != null">
+        SERVICENOMENU = #{record.servicenomenu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.telnum != null">
+        TELNUM = #{record.telnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.userid != null">
+        USERID = #{record.userid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.channelnum != null">
+        CHANNELNUM = #{record.channelnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.showworkbench != null">
+        SHOWWORKBENCH = #{record.showworkbench,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fromchannel != null">
+        FROMCHANNEL = #{record.fromchannel,jdbcType=DECIMAL},
+      </if>
+      <if test="record.istestneeded != null">
+        ISTESTNEEDED = #{record.istestneeded,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pubreason != null">
+        PUBREASON = #{record.pubreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applytype != null">
+        APPLYTYPE = #{record.applytype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.encodingAesKey != null">
+        ENCODING_AES_KEY = #{record.encodingAesKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.size1 != null">
+        SIZE1 = #{record.size1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.publishtime != null">
+        PUBLISHTIME = #{record.publishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.personalize != null">
+        PERSONALIZE = #{record.personalize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selcorpid != null">
+        SELCORPID = #{record.selcorpid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.platformUrl != null">
+        PLATFORM_URL = #{record.platformUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.securityTelNum != null">
+        SECURITY_TEL_NUM = #{record.securityTelNum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ishideicon != null">
+        ISHIDEICON = #{record.ishideicon,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ismarketvisible != null">
+        ISMARKETVISIBLE = #{record.ismarketvisible,jdbcType=DECIMAL},
+      </if>
+      <if test="record.forwardurl != null">
+        FORWARDURL = #{record.forwardurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.visitCount != null">
+        VISIT_COUNT = #{record.visitCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.topic != null">
+        TOPIC = #{record.topic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extensionimg != null">
+        EXTENSIONIMG = #{record.extensionimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isextension != null">
+        ISEXTENSION = #{record.isextension,jdbcType=DECIMAL},
+      </if>
+      <if test="record.istopshow != null">
+        ISTOPSHOW = #{record.istopshow,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update VWT_SQUARE
+    set ID = #{record.id,jdbcType=VARCHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      USEVERSION = #{record.useversion,jdbcType=VARCHAR},
+      LOGO = #{record.logo,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=DECIMAL},
+      FTPURL = #{record.ftpurl,jdbcType=VARCHAR},
+      DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      PUBLICIMAGE1 = #{record.publicimage1,jdbcType=VARCHAR},
+      PUBLICIMAGE2 = #{record.publicimage2,jdbcType=VARCHAR},
+      PUBLICIMAGE3 = #{record.publicimage3,jdbcType=VARCHAR},
+      PUBLICIMAGE4 = #{record.publicimage4,jdbcType=VARCHAR},
+      ISHIDE = #{record.ishide,jdbcType=DECIMAL},
+      PRESET = #{record.preset,jdbcType=DECIMAL},
+      SORT = #{record.sort,jdbcType=DECIMAL},
+      CORPID = #{record.corpid,jdbcType=VARCHAR},
+      SECURITYID = #{record.securityid,jdbcType=VARCHAR},
+      SECURITYKEY = #{record.securitykey,jdbcType=VARCHAR},
+      CALLBACKURL = #{record.callbackurl,jdbcType=VARCHAR},
+      SERVICENOTYPE = #{record.servicenotype,jdbcType=VARCHAR},
+      SIZES = #{record.sizes,jdbcType=DECIMAL},
+      VERSION = #{record.version,jdbcType=VARCHAR},
+      PACKAGENAME = #{record.packagename,jdbcType=VARCHAR},
+      VERSIONCODE = #{record.versioncode,jdbcType=VARCHAR},
+      ISOPENALL = #{record.isopenall,jdbcType=DECIMAL},
+      ISSYSTEMAPP = #{record.issystemapp,jdbcType=DECIMAL},
+      REGIONNAME = #{record.regionname,jdbcType=VARCHAR},
+      ISFREELOGIN = #{record.isfreelogin,jdbcType=DECIMAL},
+      TOKEN = #{record.token,jdbcType=VARCHAR},
+      TOKENURL = #{record.tokenurl,jdbcType=VARCHAR},
+      ISCANCELATTENTION = #{record.iscancelattention,jdbcType=DECIMAL},
+      STARTPARAMETER = #{record.startparameter,jdbcType=VARCHAR},
+      SERVICENOMENU = #{record.servicenomenu,jdbcType=DECIMAL},
+      TELNUM = #{record.telnum,jdbcType=DECIMAL},
+      USERID = #{record.userid,jdbcType=DECIMAL},
+      CHANNELNUM = #{record.channelnum,jdbcType=DECIMAL},
+      SHOWWORKBENCH = #{record.showworkbench,jdbcType=DECIMAL},
+      FROMCHANNEL = #{record.fromchannel,jdbcType=DECIMAL},
+      ISTESTNEEDED = #{record.istestneeded,jdbcType=DECIMAL},
+      PUBREASON = #{record.pubreason,jdbcType=VARCHAR},
+      APPLYTYPE = #{record.applytype,jdbcType=DECIMAL},
+      ENCODING_AES_KEY = #{record.encodingAesKey,jdbcType=VARCHAR},
+      SIZE1 = #{record.size1,jdbcType=DECIMAL},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      PUBLISHTIME = #{record.publishtime,jdbcType=TIMESTAMP},
+      PERSONALIZE = #{record.personalize,jdbcType=VARCHAR},
+      SELCORPID = #{record.selcorpid,jdbcType=VARCHAR},
+      PLATFORM_URL = #{record.platformUrl,jdbcType=VARCHAR},
+      SECURITY_TEL_NUM = #{record.securityTelNum,jdbcType=DECIMAL},
+      ISHIDEICON = #{record.ishideicon,jdbcType=DECIMAL},
+      ISMARKETVISIBLE = #{record.ismarketvisible,jdbcType=DECIMAL},
+      FORWARDURL = #{record.forwardurl,jdbcType=VARCHAR},
+      VISIT_COUNT = #{record.visitCount,jdbcType=DECIMAL},
+      TOPIC = #{record.topic,jdbcType=VARCHAR},
+      EXTENSIONIMG = #{record.extensionimg,jdbcType=VARCHAR},
+      ISEXTENSION = #{record.isextension,jdbcType=DECIMAL},
+      ISTOPSHOW = #{record.istopshow,jdbcType=DECIMAL}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="spingclouddemo.MybatisFile.example.VwtSquare">
+    update VWT_SQUARE
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="useversion != null">
+        USEVERSION = #{useversion,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        LOGO = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        TYPE = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="ftpurl != null">
+        FTPURL = #{ftpurl,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publicimage1 != null">
+        PUBLICIMAGE1 = #{publicimage1,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage2 != null">
+        PUBLICIMAGE2 = #{publicimage2,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage3 != null">
+        PUBLICIMAGE3 = #{publicimage3,jdbcType=VARCHAR},
+      </if>
+      <if test="publicimage4 != null">
+        PUBLICIMAGE4 = #{publicimage4,jdbcType=VARCHAR},
+      </if>
+      <if test="ishide != null">
+        ISHIDE = #{ishide,jdbcType=DECIMAL},
+      </if>
+      <if test="preset != null">
+        PRESET = #{preset,jdbcType=DECIMAL},
+      </if>
+      <if test="sort != null">
+        SORT = #{sort,jdbcType=DECIMAL},
+      </if>
+      <if test="corpid != null">
+        CORPID = #{corpid,jdbcType=VARCHAR},
+      </if>
+      <if test="securityid != null">
+        SECURITYID = #{securityid,jdbcType=VARCHAR},
+      </if>
+      <if test="securitykey != null">
+        SECURITYKEY = #{securitykey,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackurl != null">
+        CALLBACKURL = #{callbackurl,jdbcType=VARCHAR},
+      </if>
+      <if test="servicenotype != null">
+        SERVICENOTYPE = #{servicenotype,jdbcType=VARCHAR},
+      </if>
+      <if test="sizes != null">
+        SIZES = #{sizes,jdbcType=DECIMAL},
+      </if>
+      <if test="version != null">
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="packagename != null">
+        PACKAGENAME = #{packagename,jdbcType=VARCHAR},
+      </if>
+      <if test="versioncode != null">
+        VERSIONCODE = #{versioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="isopenall != null">
+        ISOPENALL = #{isopenall,jdbcType=DECIMAL},
+      </if>
+      <if test="issystemapp != null">
+        ISSYSTEMAPP = #{issystemapp,jdbcType=DECIMAL},
+      </if>
+      <if test="regionname != null">
+        REGIONNAME = #{regionname,jdbcType=VARCHAR},
+      </if>
+      <if test="isfreelogin != null">
+        ISFREELOGIN = #{isfreelogin,jdbcType=DECIMAL},
+      </if>
+      <if test="token != null">
+        TOKEN = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="tokenurl != null">
+        TOKENURL = #{tokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="iscancelattention != null">
+        ISCANCELATTENTION = #{iscancelattention,jdbcType=DECIMAL},
+      </if>
+      <if test="startparameter != null">
+        STARTPARAMETER = #{startparameter,jdbcType=VARCHAR},
+      </if>
+      <if test="servicenomenu != null">
+        SERVICENOMENU = #{servicenomenu,jdbcType=DECIMAL},
+      </if>
+      <if test="telnum != null">
+        TELNUM = #{telnum,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null">
+        USERID = #{userid,jdbcType=DECIMAL},
+      </if>
+      <if test="channelnum != null">
+        CHANNELNUM = #{channelnum,jdbcType=DECIMAL},
+      </if>
+      <if test="showworkbench != null">
+        SHOWWORKBENCH = #{showworkbench,jdbcType=DECIMAL},
+      </if>
+      <if test="fromchannel != null">
+        FROMCHANNEL = #{fromchannel,jdbcType=DECIMAL},
+      </if>
+      <if test="istestneeded != null">
+        ISTESTNEEDED = #{istestneeded,jdbcType=DECIMAL},
+      </if>
+      <if test="pubreason != null">
+        PUBREASON = #{pubreason,jdbcType=VARCHAR},
+      </if>
+      <if test="applytype != null">
+        APPLYTYPE = #{applytype,jdbcType=DECIMAL},
+      </if>
+      <if test="encodingAesKey != null">
+        ENCODING_AES_KEY = #{encodingAesKey,jdbcType=VARCHAR},
+      </if>
+      <if test="size1 != null">
+        SIZE1 = #{size1,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="publishtime != null">
+        PUBLISHTIME = #{publishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="personalize != null">
+        PERSONALIZE = #{personalize,jdbcType=VARCHAR},
+      </if>
+      <if test="selcorpid != null">
+        SELCORPID = #{selcorpid,jdbcType=VARCHAR},
+      </if>
+      <if test="platformUrl != null">
+        PLATFORM_URL = #{platformUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="securityTelNum != null">
+        SECURITY_TEL_NUM = #{securityTelNum,jdbcType=DECIMAL},
+      </if>
+      <if test="ishideicon != null">
+        ISHIDEICON = #{ishideicon,jdbcType=DECIMAL},
+      </if>
+      <if test="ismarketvisible != null">
+        ISMARKETVISIBLE = #{ismarketvisible,jdbcType=DECIMAL},
+      </if>
+      <if test="forwardurl != null">
+        FORWARDURL = #{forwardurl,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        VISIT_COUNT = #{visitCount,jdbcType=DECIMAL},
+      </if>
+      <if test="topic != null">
+        TOPIC = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="extensionimg != null">
+        EXTENSIONIMG = #{extensionimg,jdbcType=VARCHAR},
+      </if>
+      <if test="isextension != null">
+        ISEXTENSION = #{isextension,jdbcType=DECIMAL},
+      </if>
+      <if test="istopshow != null">
+        ISTOPSHOW = #{istopshow,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="spingclouddemo.MybatisFile.example.VwtSquare">
+    update VWT_SQUARE
+    set NAME = #{name,jdbcType=VARCHAR},
+      USEVERSION = #{useversion,jdbcType=VARCHAR},
+      LOGO = #{logo,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=DECIMAL},
+      FTPURL = #{ftpurl,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      PUBLICIMAGE1 = #{publicimage1,jdbcType=VARCHAR},
+      PUBLICIMAGE2 = #{publicimage2,jdbcType=VARCHAR},
+      PUBLICIMAGE3 = #{publicimage3,jdbcType=VARCHAR},
+      PUBLICIMAGE4 = #{publicimage4,jdbcType=VARCHAR},
+      ISHIDE = #{ishide,jdbcType=DECIMAL},
+      PRESET = #{preset,jdbcType=DECIMAL},
+      SORT = #{sort,jdbcType=DECIMAL},
+      CORPID = #{corpid,jdbcType=VARCHAR},
+      SECURITYID = #{securityid,jdbcType=VARCHAR},
+      SECURITYKEY = #{securitykey,jdbcType=VARCHAR},
+      CALLBACKURL = #{callbackurl,jdbcType=VARCHAR},
+      SERVICENOTYPE = #{servicenotype,jdbcType=VARCHAR},
+      SIZES = #{sizes,jdbcType=DECIMAL},
+      VERSION = #{version,jdbcType=VARCHAR},
+      PACKAGENAME = #{packagename,jdbcType=VARCHAR},
+      VERSIONCODE = #{versioncode,jdbcType=VARCHAR},
+      ISOPENALL = #{isopenall,jdbcType=DECIMAL},
+      ISSYSTEMAPP = #{issystemapp,jdbcType=DECIMAL},
+      REGIONNAME = #{regionname,jdbcType=VARCHAR},
+      ISFREELOGIN = #{isfreelogin,jdbcType=DECIMAL},
+      TOKEN = #{token,jdbcType=VARCHAR},
+      TOKENURL = #{tokenurl,jdbcType=VARCHAR},
+      ISCANCELATTENTION = #{iscancelattention,jdbcType=DECIMAL},
+      STARTPARAMETER = #{startparameter,jdbcType=VARCHAR},
+      SERVICENOMENU = #{servicenomenu,jdbcType=DECIMAL},
+      TELNUM = #{telnum,jdbcType=DECIMAL},
+      USERID = #{userid,jdbcType=DECIMAL},
+      CHANNELNUM = #{channelnum,jdbcType=DECIMAL},
+      SHOWWORKBENCH = #{showworkbench,jdbcType=DECIMAL},
+      FROMCHANNEL = #{fromchannel,jdbcType=DECIMAL},
+      ISTESTNEEDED = #{istestneeded,jdbcType=DECIMAL},
+      PUBREASON = #{pubreason,jdbcType=VARCHAR},
+      APPLYTYPE = #{applytype,jdbcType=DECIMAL},
+      ENCODING_AES_KEY = #{encodingAesKey,jdbcType=VARCHAR},
+      SIZE1 = #{size1,jdbcType=DECIMAL},
+      STATUS = #{status,jdbcType=DECIMAL},
+      PUBLISHTIME = #{publishtime,jdbcType=TIMESTAMP},
+      PERSONALIZE = #{personalize,jdbcType=VARCHAR},
+      SELCORPID = #{selcorpid,jdbcType=VARCHAR},
+      PLATFORM_URL = #{platformUrl,jdbcType=VARCHAR},
+      SECURITY_TEL_NUM = #{securityTelNum,jdbcType=DECIMAL},
+      ISHIDEICON = #{ishideicon,jdbcType=DECIMAL},
+      ISMARKETVISIBLE = #{ismarketvisible,jdbcType=DECIMAL},
+      FORWARDURL = #{forwardurl,jdbcType=VARCHAR},
+      VISIT_COUNT = #{visitCount,jdbcType=DECIMAL},
+      TOPIC = #{topic,jdbcType=VARCHAR},
+      EXTENSIONIMG = #{extensionimg,jdbcType=VARCHAR},
+      ISEXTENSION = #{isextension,jdbcType=DECIMAL},
+      ISTOPSHOW = #{istopshow,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <sql id="OracleDialectPrefix">
+    <if test="oracleStart != null">
+      <if test="oracleEnd != null">
+        select * from ( select row_.*, rownum rownum_ from ( 
+      </if>
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix">
+    <if test="oracleStart != null">
+      <if test="oracleEnd != null">
+        <![CDATA[ ) row_ ) where rownum_ > #{oracleStart} and rownum_ <= #{oracleEnd} ]]>
+      </if>
+    </if>
+  </sql>
+
+  <!--当然 mybatis也支持 自己写sql语句-->
+  <select id="selectSquare"  resultMap="BaseResultMap">
+        SELECT * FROM VWT_SQUARE
+        where name=#{squarename}
+        and  type=#{type}
+    </select>
+
+
+</mapper>
