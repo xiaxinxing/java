@@ -1,0 +1,59 @@
+
+# git 初始化操作
+
+git init   //初始化本地文件夹 使其变成一个git仓库
+
+git remote add  origin  url       //使当前仓库与远程仓库建立连接
+
+git remote show origin     //展示远程仓库当前的分支
+
+git push url     //从远程仓库克隆代码
+
+
+git remote -v  //查看当前连接的远程git 的地址
+
+
+git branch --set-upstream master origin/master      //设置默认提交分支   master
+
+git log           //查看历史记录
+
+
+####git 提交下载 操作
+
+git status        查看仓库状态
+
+git add name        //添加要提交本地修改的文件
+
+git commit -m '第一次提交'     //提交到本地git库    
+
+
+git push origin master    //提交到   origin 主机 上的 master分支  
+
+git push -u origin  master          //指定默认的 远程主机及分支
+git clone  url       //下载代码到本地
+
+git checkout -b sgcc origin/master     //代表 在origin/master的基础上，创建一个新分支。
+
+git merge origin/master      //在本地分支上  合并远程分支。
+
+
+## git 版本回退 
+
+git reset --hard  id      //回退到 id当前所在版本
+
+git revert HEAD        还原最近一次提交的修改：
+
+  git revert commit-id   还原指定版本的修改
+
+
+# git  删除远程文件夹 
+
+git rm -r -n --cached  */src/\*      //-n：加上这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。
+
+git rm -r --cached  */src/\*      //最终执行命令.
+
+git commit -m"移除src目录下所有文件的版本控制"    //提交
+
+git push origin master   //提交到远程服务器
+
+
