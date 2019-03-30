@@ -12,7 +12,7 @@
 
 
 
-#win下启动 apache rocketMQ      
+# win下启动 apache rocketMQ      
 
 
 1，下载rocketmq 
